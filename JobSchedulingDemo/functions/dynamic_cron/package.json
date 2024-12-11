@@ -1,0 +1,10 @@
+{
+	"name": "dynamic_cron",
+	"version": "1.0.0",
+	"main": "index.js",
+	"author": "anand.sanmugasundarrajan@zohocorp.com",
+	"dependencies": {
+		"zcatalyst-cli": "^1.18.0-beta.2",
+		"zcatalyst-sdk-node": "beta"
+	}
+}

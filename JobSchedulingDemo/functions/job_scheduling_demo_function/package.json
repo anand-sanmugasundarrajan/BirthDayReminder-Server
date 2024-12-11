@@ -1,0 +1,9 @@
+{
+	"name": "job_scheduling_demo_function",
+	"version": "1.0.0",
+	"main": "index.js",
+	"author": "anand.sanmugasundarrajan@zohocorp.com",
+	"dependencies": {
+		"zcatalyst-sdk-node": "beta"
+	}
+}

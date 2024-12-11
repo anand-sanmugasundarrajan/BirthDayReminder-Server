@@ -1,0 +1,167 @@
+
+   /* Styling for the account-container */
+   .account-container {
+    background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
+    padding: 40px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 100px;
+    border-radius: 8px; /* Rounded corners */
+    text-align: center; /* Center text inside container */
+  }
+  
+  .account-container p {
+    font-size: 16px;
+    color: #333; /* Dark text for better readability */
+  }
+  
+  .account-container button {
+    background-color: #11a1a1; /* Button background color */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .account-container button:hover {
+    background-color: #0e7d7d; /* Darker shade on hover */
+  }
+  
+  .account-container a {
+    color: white;
+    text-decoration: none;
+  }
+  iframe{
+    background-image: linear-gradient(to bottom, #f2f2f2, #ffffff);
+    height: 600px;
+    width: 600px;
+    border-radius: 8px; /* Rounded corners */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /* Styling for the signin-container */
+  .signin-container {
+    background-image: linear-gradient(to bottom, #f2f2f2, #ffffff);
+    padding: 40px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 600px;
+    border-radius: 8px; /* Rounded corners */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .signin-container h2 {
+    font-size: 24px;
+    color: #11a1a1; /* Gradient text color for heading */
+    margin-bottom: 20px;
+  }
+  
+    h2 {
+      background: linear-gradient(to right, rgb(11, 121, 121),  rgb(11, 121, 121));
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .ui.toggle.checkbox {
+      margin-bottom: 0; /* Adjust spacing if needed */
+  }
+  
+  .d-flex.align-items-center.ms-2 {
+      margin-left: auto; /* Moves the edit and delete buttons to the right end */
+  }
+  
+    /* Styling for the form labels */
+    label {
+      /* Add a subtle animation on hover */
+      transition: color 0.3s ease;
+    }
+    
+    label:hover {
+      /* Change the color on hover */
+      color:  grey;
+    }
+    
+    /* Styling for the form input fields */
+    input[type="text"],
+    input[type="date"],
+    select {
+      /* Increase the height of the input fields */
+      height: 40px;
+      /* Add a subtle box shadow */
+    }
+    
+    /* Styling for the form input groups */
+    .form-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    
+    .form-group label {
+      flex: 0 0 200px; /* Set a fixed width for the labels */
+      margin-right: 10px; /* Add some spacing between label and input */
+    }
+    
+    .form-group input,
+    .form-group select {
+      flex: 1; /* Allow the inputs to take up remaining space */
+    }
+    
+    /* Styling for the submit button */
+    input[type="submit"] {
+      /* Add a gradient background */
+      background-image: linear-gradient(to right,  rgb(11, 121, 121),  rgb(11, 121, 121));
+      /* Add a box shadow */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      margin-top: 15px;
+      width: 150px;
+      margin-left: 600px;
+    }
+    input[type ="checkbox"] {
+      margin-bottom: 20px;
+      margin-top: 20px;
+      margin-left: 20px;
+      margin-right: 20px;
+  }
+    input[type="submit"]:hover {
+      /* Darken the background on hover */
+      background-image: linear-gradient(to right,  rgb(11, 121, 121),  rgb(11, 121, 121));
+    }
+    h3{
+      background: linear-gradient(to right, rgb(11, 121, 121),  rgb(11, 121, 121));
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .ui.toggle.checkbox input:checked~label:before {
+      background-color: #21ba45;
+      /* Color when enabled */
+  }
+  
+  .ui.toggle.checkbox input:checked~label:after {
+      background-color: #ffffff;
+      /* Color when enabled */
+  }
+  
+  .ui.toggle.checkbox .slider:before {
+      background-color: #db2828;
+      /* Color when disabled */
+  }
+  
+  .ui.toggle.checkbox .slider:after {
+      background-color: #ffffff;
+      /* Color when disabled */
+  }
+  

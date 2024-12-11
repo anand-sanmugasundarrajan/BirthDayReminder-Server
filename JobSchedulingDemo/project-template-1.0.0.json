@@ -1,0 +1,497 @@
+{
+  "name" : "project-template",
+  "version" : "1.0.0",
+  "parameters" : { },
+  "components" : {
+    "Circuits" : [ ],
+    "ApplicationAlerts" : [ ],
+    "Functions" : [ {
+      "type" : "function",
+      "name" : "app_sail_project_function",
+      "properties" : {
+        "stack" : "node18",
+        "code" : {
+          "path" : "functions/app_sail_project_function.zip"
+        },
+        "configuration" : {
+          "environment" : {
+            "variables" : { }
+          },
+          "memory" : 256
+        },
+        "type" : "applogic",
+        "name" : "app_sail_project_function"
+      },
+      "dependsOn" : [ ]
+    }, {
+      "type" : "function",
+      "name" : "dynamic_cron",
+      "properties" : {
+        "stack" : "node18",
+        "code" : {
+          "path" : "functions/dynamic_cron.zip"
+        },
+        "configuration" : {
+          "environment" : {
+            "variables" : { }
+          },
+          "memory" : 256
+        },
+        "type" : "job",
+        "name" : "dynamic_cron"
+      },
+      "dependsOn" : [ ]
+    } ],
+    "Add-onServices" : [ ],
+    "WebClient" : [ {
+      "type" : "client",
+      "name" : "BirthDayReminder",
+      "properties" : {
+        "app_name" : "BirthDayReminder",
+        "modified_time" : "Sep 02, 2024 10:24 AM",
+        "code" : {
+          "path" : "webclient/BirthDayReminder.zip"
+        }
+      },
+      "dependsOn" : [ ]
+    } ],
+    "Cron" : [ ],
+    "SchedulingJobpool" : [ {
+      "type" : "SchedulingJobpool",
+      "name" : "test",
+      "properties" : {
+        "name" : "test",
+        "type" : "Function",
+        "capacity" : {
+          "memory" : 5120
+        }
+      },
+      "dependsOn" : [ ]
+    } ],
+    "Filestore" : [ {
+      "type" : "folder",
+      "name" : "BirthDayTemplates",
+      "properties" : {
+        "audit_consent" : false,
+        "folder_name" : "BirthDayTemplates"
+      },
+      "dependsOn" : [ ]
+    }, {
+      "type" : "folderPermission",
+      "name" : "BirthDayTemplates-App Administrator",
+      "properties" : {
+        "role_name" : "App Administrator",
+        "folder_name" : "BirthDayTemplates",
+        "type" : "App Administrator",
+        "folder_permissions" : [ "DOWNLOAD", "UPLOAD", "DELETE" ]
+      },
+      "dependsOn" : [ "Filestore.folder.BirthDayTemplates" ]
+    }, {
+      "type" : "folderPermission",
+      "name" : "BirthDayTemplates-App User",
+      "properties" : {
+        "role_name" : "App User",
+        "folder_name" : "BirthDayTemplates",
+        "type" : "App User",
+        "folder_permissions" : [ "DOWNLOAD" ]
+      },
+      "dependsOn" : [ "Filestore.folder.BirthDayTemplates" ]
+    } ],
+    "Mail" : [ {
+      "type" : "email",
+      "name" : "anand.sanmugasundarrajan@zohocorp.com",
+      "properties" : {
+        "email_address" : "anand.sanmugasundarrajan@zohocorp.com",
+        "display_name" : "BirthDayReminder"
+      },
+      "dependsOn" : [ ]
+    }, {
+      "type" : "email",
+      "name" : "anand.be.cs@gmail.com",
+      "properties" : {
+        "email_address" : "anand.be.cs@gmail.com",
+        "display_name" : "BirthDayReminder"
+      },
+      "dependsOn" : [ ]
+    } ],
+    "Zia" : [ ],
+    "NoSql" : [ ],
+    "Datastore" : [ {
+      "type" : "table",
+      "name" : "BirthDayReminder",
+      "properties" : {
+        "earlyAccessData" : {
+          "QUEUED_EVENTS" : false,
+          "CATALYST_2" : false,
+          "RESUME_PARSER" : false,
+          "SIGNALS" : false,
+          "PIPELINES" : false,
+          "SLATE" : false,
+          "ZECURE" : true,
+          "MULTIORG" : false,
+          "JOB_SCHEDULING" : true,
+          "STRATUS" : false,
+          "ZSEARCH" : false,
+          "NOSQL" : true,
+          "AUTHENTICATION_2" : false
+        },
+        "table_name" : "BirthDayReminder"
+      },
+      "dependsOn" : [ ]
+    }, {
+      "type" : "column",
+      "name" : "BirthDayReminder-Name",
+      "properties" : {
+        "audit_consent" : false,
+        "decimal_digits" : 2,
+        "column_name" : "Name",
+        "data_type" : "varchar",
+        "is_unique" : false,
+        "is_mandatory" : false,
+        "search_index_enabled" : false,
+        "table_id" : "BirthDayReminder",
+        "table_name" : "BirthDayReminder",
+        "max_length" : 100
+      },
+      "dependsOn" : [ "Datastore.table.BirthDayReminder" ]
+    }, {
+      "type" : "column",
+      "name" : "BirthDayReminder-Message",
+      "properties" : {
+        "audit_consent" : false,
+        "decimal_digits" : 2,
+        "column_name" : "Message",
+        "data_type" : "text",
+        "is_unique" : false,
+        "is_mandatory" : false,
+        "search_index_enabled" : false,
+        "table_id" : "BirthDayReminder",
+        "table_name" : "BirthDayReminder",
+        "max_length" : 10000
+      },
+      "dependsOn" : [ "Datastore.table.BirthDayReminder" ]
+    }, {
+      "type" : "column",
+      "name" : "BirthDayReminder-BirthDay",
+      "properties" : {
+        "audit_consent" : false,
+        "decimal_digits" : 2,
+        "column_name" : "BirthDay",
+        "data_type" : "date",
+        "is_unique" : false,
+        "is_mandatory" : false,
+        "search_index_enabled" : false,
+        "table_id" : "BirthDayReminder",
+        "table_name" : "BirthDayReminder",
+        "max_length" : 50
+      },
+      "dependsOn" : [ "Datastore.table.BirthDayReminder" ]
+    }, {
+      "type" : "column",
+      "name" : "BirthDayReminder-Email",
+      "properties" : {
+        "audit_consent" : false,
+        "decimal_digits" : 2,
+        "column_name" : "Email",
+        "data_type" : "varchar",
+        "is_unique" : false,
+        "is_mandatory" : false,
+        "search_index_enabled" : false,
+        "table_id" : "BirthDayReminder",
+        "table_name" : "BirthDayReminder",
+        "max_length" : 100
+      },
+      "dependsOn" : [ "Datastore.table.BirthDayReminder" ]
+    }, {
+      "type" : "column",
+      "name" : "BirthDayReminder-AutoSend",
+      "properties" : {
+        "audit_consent" : false,
+        "decimal_digits" : 2,
+        "column_name" : "AutoSend",
+        "is_unique" : false,
+        "is_mandatory" : false,
+        "default_value" : "true",
+        "table_id" : "BirthDayReminder",
+        "table_name" : "BirthDayReminder",
+        "data_type" : "boolean",
+        "search_index_enabled" : false,
+        "max_length" : 50
+      },
+      "dependsOn" : [ "Datastore.table.BirthDayReminder" ]
+    }, {
+      "type" : "column",
+      "name" : "BirthDayReminder-template",
+      "properties" : {
+        "audit_consent" : false,
+        "decimal_digits" : 2,
+        "column_name" : "template",
+        "is_unique" : false,
+        "is_mandatory" : false,
+        "default_value" : "1636000000011001",
+        "table_id" : "BirthDayReminder",
+        "table_name" : "BirthDayReminder",
+        "data_type" : "varchar",
+        "search_index_enabled" : false,
+        "max_length" : 123
+      },
+      "dependsOn" : [ "Datastore.table.BirthDayReminder" ]
+    }, {
+      "type" : "column",
+      "name" : "BirthDayReminder-userId",
+      "properties" : {
+        "audit_consent" : false,
+        "decimal_digits" : 2,
+        "column_name" : "userId",
+        "data_type" : "text",
+        "is_unique" : false,
+        "is_mandatory" : false,
+        "search_index_enabled" : false,
+        "table_id" : "BirthDayReminder",
+        "table_name" : "BirthDayReminder",
+        "max_length" : 10000
+      },
+      "dependsOn" : [ "Datastore.table.BirthDayReminder" ]
+    }, {
+      "type" : "tableScope",
+      "name" : "BirthDayReminder-App Administrator",
+      "properties" : {
+        "role_name" : "App Administrator",
+        "table_scope" : "GLOBAL",
+        "type" : "App Administrator",
+        "table_name" : "BirthDayReminder"
+      },
+      "dependsOn" : [ "Datastore.table.BirthDayReminder" ]
+    }, {
+      "type" : "tableScope",
+      "name" : "BirthDayReminder-App User",
+      "properties" : {
+        "role_name" : "App User",
+        "table_scope" : "USER",
+        "type" : "App User",
+        "table_name" : "BirthDayReminder"
+      },
+      "dependsOn" : [ "Datastore.table.BirthDayReminder" ]
+    }, {
+      "type" : "tablePermission",
+      "name" : "BirthDayReminder-App Administrator",
+      "properties" : {
+        "role_name" : "App Administrator",
+        "type" : "App Administrator",
+        "table_permissions" : [ "SELECT", "UPDATE", "INSERT", "DELETE" ],
+        "table_name" : "BirthDayReminder"
+      },
+      "dependsOn" : [ "Datastore.table.BirthDayReminder" ]
+    }, {
+      "type" : "tablePermission",
+      "name" : "BirthDayReminder-App User",
+      "properties" : {
+        "role_name" : "App User",
+        "type" : "App User",
+        "table_permissions" : [ "SELECT", "UPDATE", "INSERT", "DELETE" ],
+        "table_name" : "BirthDayReminder"
+      },
+      "dependsOn" : [ "Datastore.table.BirthDayReminder" ]
+    } ],
+    "Authentication" : [ {
+      "type" : "emailTemplates",
+      "name" : "1",
+      "properties" : {
+        "subject" : "Welcome to %APP_NAME%",
+        "template_type" : 1,
+        "message" : "<p>Hello %FIRST_NAME% %LAST_NAME%,</p>\n<p>You have been invited to join %APP_NAME%. You can access the app from this link:</p>\n<p><a href='%LINK%'>%LINK%</a></p>\n<p>You are assigned to the role %ROLE_NAME% in this app.</p>\n<p>If you didn’t ask to join the application or if you think this was a mistake, you can ignore this email.</p>\n<p>Thanks,</p>\n<p>%APP_NAME% team</p>\n"
+      },
+      "dependsOn" : [ ]
+    }, {
+      "type" : "emailTemplates",
+      "name" : "2",
+      "properties" : {
+        "subject" : "Password Reset for %APP_NAME%",
+        "template_type" : 2,
+        "message" : "<p>Hello %FIRST_NAME% %LAST_NAME%,</p>\n<p>Follow this link to reset your %APP_NAME% password for your %EMAIL% account.</p>\n<p><a href='%LINK%'>%LINK%</a></p>\n<p>If you didn’t ask to reset your password, you can ignore this email.</p>\n<p>Thanks,</p>\n<p>Your %APP_NAME% team</p>"
+      },
+      "dependsOn" : [ ]
+    }, {
+      "type" : "roles",
+      "name" : "App Administrator",
+      "properties" : {
+        "role_name" : "App Administrator",
+        "description" : "Admin Role for the application",
+        "type" : "App Administrator",
+        "is_default" : false
+      },
+      "dependsOn" : [ "Authentication.roles.App User" ]
+    }, {
+      "type" : "roles",
+      "name" : "App User",
+      "properties" : {
+        "role_name" : "App User",
+        "description" : "User Role for the application",
+        "type" : "App User",
+        "is_default" : true
+      },
+      "dependsOn" : [ ]
+    }, {
+      "type" : "SignupConfiguration",
+      "name" : "signup-configuration",
+      "properties" : {
+        "custom_validation" : false,
+        "public_signup" : true,
+        "status" : {
+          "embedded_auth" : true,
+          "third_party_auth" : false,
+          "hosted_auth" : true
+        }
+      },
+      "dependsOn" : [ ]
+    }, {
+      "type" : "HostedLogin",
+      "name" : "hosted-login",
+      "properties" : {
+        "config" : {
+          "is_logo_present" : false,
+          "company_name" : "zoho",
+          "colors" : {
+            "background_color" : "#dce7ff",
+            "primary_color" : "#0059e9"
+          }
+        }
+      },
+      "dependsOn" : [ ]
+    }, {
+      "type" : "AuthorizedDomains",
+      "name" : "appsail-10086936010.development.catalystappsail.com",
+      "properties" : {
+        "cors" : true,
+        "domain" : "appsail-10086936010.development.catalystappsail.com",
+        "iframe" : true
+      },
+      "dependsOn" : [ ]
+    }, {
+      "type" : "AuthorizedDomains",
+      "name" : "localhost:3000",
+      "properties" : {
+        "cors" : true,
+        "domain" : "localhost:3000",
+        "iframe" : true
+      },
+      "dependsOn" : [ ]
+    }, {
+      "type" : "AuthorizedDomains",
+      "name" : "appsailproject-856963683.development.catalystserverless.com",
+      "properties" : {
+        "cors" : true,
+        "domain" : "appsailproject-856963683.development.catalystserverless.com",
+        "iframe" : true
+      },
+      "dependsOn" : [ ]
+    }, {
+      "type" : "AuthorizedDomains",
+      "name" : "birthdayreminder-856963683.development.catalystserverless.com",
+      "properties" : {
+        "cors" : true,
+        "domain" : "birthdayreminder-856963683.development.catalystserverless.com",
+        "iframe" : true
+      },
+      "dependsOn" : [ ]
+    }, {
+      "type" : "AuthorizedDomains",
+      "name" : "127.0.0.1",
+      "properties" : {
+        "cors" : true,
+        "domain" : "127.0.0.1",
+        "iframe" : true
+      },
+      "dependsOn" : [ ]
+    }, {
+      "type" : "AuthorizedDomains",
+      "name" : "accounts.zoho.com",
+      "properties" : {
+        "cors" : true,
+        "domain" : "accounts.zoho.com",
+        "iframe" : true
+      },
+      "dependsOn" : [ ]
+    }, {
+      "type" : "AuthorizedDomains",
+      "name" : "localhost:3002",
+      "properties" : {
+        "cors" : true,
+        "domain" : "localhost:3002",
+        "iframe" : false
+      },
+      "dependsOn" : [ ]
+    }, {
+      "type" : "SignInMethod",
+      "name" : "Zoho",
+      "properties" : {
+        "is_enabled" : true,
+        "auth_type" : "Zoho",
+        "scopes" : [ ],
+        "client_name" : "BirthDayReminder"
+      },
+      "dependsOn" : [ ]
+    } ],
+    "AppSail" : [ {
+      "type" : "appsail",
+      "name" : "AppSail",
+      "properties" : {
+        "stack" : "node16",
+        "code" : {
+          "path" : "appsail/AppSail.zip"
+        },
+        "configuration" : {
+          "startup_command" : "node index.js",
+          "environment" : {
+            "variables" : {
+              "catalyst_auth" : "true"
+            },
+            "last_updated_time" : 1726640390531
+          },
+          "memory" : 256,
+          "catalyst_auth" : true,
+          "login_redirect" : "/"
+        },
+        "name" : "AppSail",
+        "status" : true
+      },
+      "dependsOn" : [ ]
+    } ],
+    "SecurityRules" : [ {
+      "type" : "rules",
+      "name" : "security-rules",
+      "properties" : {
+        "functions" : { },
+        "advancedio" : {
+          "app_sail_project_function" : [ {
+            ".*" : {
+              "methods" : [ "GET", "POST", "DELETE", "PUT", "PATCH" ],
+              "authentication" : "optional"
+            }
+          } ]
+        }
+      },
+      "dependsOn" : [ ]
+    } ],
+    "EventListeners" : [ {
+      "type" : "listeners",
+      "name" : "Default",
+      "properties" : {
+        "name" : "Default",
+        "description" : "Associates events in Catalyst components, such as a Data Store insertion or a File Store upload, with target event functions or circuits ",
+        "type" : "System",
+        "status" : "Enabled"
+      },
+      "dependsOn" : [ ]
+    } ],
+    "SchedulingCron" : [ ],
+    "Cache" : [ {
+      "type" : "segment",
+      "name" : "Default",
+      "properties" : {
+        "segment_name" : "Default"
+      },
+      "dependsOn" : [ ]
+    } ]
+  }
+}

@@ -1,0 +1,8 @@
+<template tag-name='welcome-comp'>
+	<h1>Available features of LYTE</h1>
+	<ul>	
+		<li lyte-for="{{features}} as item index">
+			<a href="{{item.url}}" target="_blank">{{item.module}}</a>
+		</li>
+	</ul>
+</template>

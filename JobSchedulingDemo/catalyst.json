@@ -1,0 +1,16 @@
+{
+  "appsail": [
+    {
+      "source": "/Users/anand-21868/JobSchedulingDemo/appsail",
+      "name": "AppSail"
+    }
+  ],
+  "functions": {
+    "targets": [
+      "dynamic_cron",
+      "job_scheduling_demo_function"
+    ],
+    "ignore": [],
+    "source": "functions"
+  }
+}

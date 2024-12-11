@@ -1,0 +1,676 @@
+/* General container styles */
+.container, .signin-container, .account-container {
+    padding: 40px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  
+  /* Specific container styles */
+  .container {
+    background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
+  }
+  
+  .signin-container {
+    background-image: linear-gradient(to bottom, #f2f2f2, #ffffff);
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .account-container {
+    background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
+    height: 100px;
+    text-align: center;
+  }
+  
+  .account-container p {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .account-container button {
+    background-color: #11a1a1;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .account-container button:hover {
+    background-color: #0e7d7d;
+  }
+  
+  .account-container a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  iframe {
+    background-image: linear-gradient(to bottom, #f2f2f2, #ffffff);
+    height: 600px;
+    width: 600px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Sign-in container styles */
+  .signin-container h2 {
+    font-size: 24px;
+    color: #11a1a1;
+    margin-bottom: 20px;
+  }
+  
+  /* Headings */
+  h2, h3 {
+    background: linear-gradient(to right, rgb(11, 121, 121), rgb(11, 121, 121));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Form labels and inputs */
+  label {
+    transition: color 0.3s ease;
+  }
+  
+  label:hover {
+    color: grey;
+  }
+  
+  input[type="text"], input[type="date"], select {
+    height: 40px;
+  }
+  
+  .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .form-group label {
+    flex: 0 0 200px;
+    margin-right: 10px;
+  }
+  
+  .form-group input, .form-group select {
+    flex: 1;
+  }
+  
+  input[type="submit"] {
+    background-image: linear-gradient(to right, rgb(11, 121, 121), rgb(11, 121, 121));
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    margin-top: 15px;
+    width: 150px;
+    margin-left :550px;
+  }
+  
+  input[type="submit"]:hover {
+    background-image: linear-gradient(to right, rgb(11, 121, 121), rgb(11, 121, 121));
+  }
+  
+  input[type="checkbox"] {
+    margin: 20px;
+  }
+  
+  /* Toggle switch */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(18px);
+  }
+  
+  .slider.round {
+    border-radius: 20px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+  /* Carousel styles */
+  .carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    position: relative;
+  }
+  
+  .carousel {
+    overflow: hidden;
+    width: 100%;
+    border: 2px solid black;
+    position: relative;
+  }
+  
+  .carousel-track {
+    display: flex;
+    transition: transform 0.3s ease;
+  }
+  
+  .carousel img {
+    max-width: 100%;
+    display: block;
+    margin: 0 10px;
+  }
+  
+  .carousel-button {
+    background-color: #008cba;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .carousel-button.prev {
+    left: 10px;
+  }
+  
+  .carousel-button.next {
+    right: 10px;
+  }
+  
+  .carousel-button:hover {
+    background-color: #005f5f;
+  }
+  
+  /* Form container styles */
+  .form-container {
+    margin-bottom: 20px;
+  }
+  
+  .carousel-item .text {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .carousel-item img.birthday {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 5px;
+  }
+  
+  .carousel-item h1 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .carousel-item p {
+    color: #666;
+    font-size: 1rem;
+  }
+  
+  .credit {
+    margin-top: 10px;
+    font-size: 0.875rem;
+    color: #999;
+  }
+  
+  .carousel-item .card {
+    border: none;
+  }
+  
+  #signout-button {
+    position: absolute;
+    top: 60px;
+    right: 115px;
+    z-index: 1000;
+  }
+  
+  .carousel-control-prev, .carousel-control-next {
+    filter: invert(100%);
+  }
+  .carousel-control-prev,
+  .carousel-control-next {
+      filter: invert(100%);
+  }
+  
+  .form-container {
+      margin-bottom: 20px;
+  }
+  
+  /* General Styles for Carousel Items */
+  .carousel-item {
+      height: 400px;
+      /* Fixed height for all carousel items */
+      transition: transform 0.5s ease;
+      /* Smooth transition for carousel items */
+  }
+  
+  .carousel-item img.birthday {
+      width: auto;
+      /* Allow width to adjust */
+      max-height: 300px;
+      /* Set a max height to keep images clear */
+      object-fit: contain;
+      /* Ensure image fits within the container */
+      margin: auto;
+      /* Center align the image */
+  }
+  
+  /* Template 1 Styles */
+  .template-1-card {
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      /* Ensure card takes full height */
+      padding: 20px;
+  }
+  
+  .template-1-card-header {
+      background-color: #ff6f61;
+      color: #fff;
+      padding: 20px;
+      border-radius: 15px 15px 0 0;
+      font-size: 1.5em;
+  }
+  
+  .template-1-card-body {
+      padding: 20px;
+      font-size: 1.2em;
+      color: #333;
+     background-color:#fff4df;
+  }
+  
+  .template-1-button {
+      background-color: #ff6f61;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+  }
+  
+  .template-1-button:hover {
+      background-color: #e55a4e;
+  }
+  
+  /* Template 2 Styles */
+  .template-2-container-card {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      /* Ensure full height */
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .template-2-left-container-card {
+      width: 50%;
+      height: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+  }
+  
+  .template-2-left-container-card img {
+      width: 100%;
+      /* Ensure image fits the container */
+      height: 100%;
+      object-fit: cover;
+      /* Cover the entire area */
+  }
+  
+  .template-2-right-container-card {
+      backdrop-filter: blur(25px);
+      background-color: rgba(255, 255, 255, 0.1);
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      width: 50%;
+      height: 100%;
+      margin: 1vw;
+      border-radius: 10px;
+      text-align: center;
+  }
+  
+  .template-2-text {
+      padding: 1em;
+      font-size: 1.2em;
+      color: #333;
+  }
+  
+  /* Template 3 Styles */
+  .template-3-card {
+      background: #12192c;
+      border-radius: 30px;
+      height: 100%;
+      /* Ensure full height */
+      width: 100%;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1em;
+      color: #DCE35B;
+  }
+  
+  .template-3-text {
+      padding: 1em;
+      font-size: 1.5em;
+      color:#ccc;
+  }
+  
+  .template-3-card img.birthday {
+      max-height: 300px;
+      /* Set a max height to keep images clear */
+      object-fit: contain;
+      /* Ensure image fits within the container */
+      margin: auto;
+      /* Center align the image */
+  }
+  
+  .template-3-text h1 {
+      font-family: cursive;
+      font-size: 40px;
+      color:#ccc;
+  }
+  
+  /* Template 4 Styles */
+  .template-4-card {
+      background-image: url('https://source.unsplash.com/800x600/?birthday,party');
+      background-size: cover;
+      background-position: center;
+      border-radius: 20px;
+      width: 100%;
+      height: 100%;
+      /* Ensure full height */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      position: relative;
+  }
+  
+  .template-4-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.8);
+  }
+  
+  .template-4-card-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 20px;
+  }
+  
+  .template-4-card-header {
+      color: #d72638;
+      margin-bottom: 15px;
+      font-size: 2em;
+  }
+  
+  .template-4-card-header h1 {
+      font-size: 2.5em;
+      margin: 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .template-4-card-body {
+      font-size: 1.2em;
+      color: #333;
+      margin-bottom: 20px;
+      line-height: 1.6;
+  }
+  
+  .template-4-card-footer {
+      font-size: 1em;
+      color: #555;
+  }
+  
+  .template-4-card-footer p {
+      margin: 5px 0;
+  }
+  
+  /* New Styles for the Container Div */
+  .carousel-container {
+      padding: 20px;
+      background-color: #f8f9fa;
+      /* Light background for contrast */
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form Validation Styles */
+  .is-invalid {
+      border-color: #dc3545;
+      /* Bootstrap danger color */
+  }
+  
+  .invalid-feedback {
+      display: none;
+      /* Hide feedback by default */
+  }
+  
+  .is-invalid~.invalid-feedback {
+      display: block;
+      /* Show feedback when input is invalid */
+  }
+  
+  .switch {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 20px;
+  }
+  
+  .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+  }
+  
+  .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+  }
+  
+  .slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: .4s;
+  }
+  
+  input:checked+.slider {
+      background-color: #2196F3;
+  }
+  
+  input:focus+.slider {
+      box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked+.slider:before {
+      transform: translateX(18px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+      border-radius: 20px;
+  }
+  
+  .slider.round:before {
+      border-radius: 50%;
+  }
+  
+  .reminder-item {
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+  }
+  
+  .reminder-item .controls {
+      margin-top: 10px;
+  }
+  
+  #signout-button {
+      position: absolute;
+      top: 60px;
+      right: 115px;
+      z-index: 1000;
+  }
+  
+  /* Carousel Styles */
+  .carousel-control-prev,
+  .carousel-control-next {
+      filter: invert(100%);
+  }
+  
+  /* General Styles for Carousel Items */
+  .carousel-item {
+      height: 400px;
+      /* Fixed height for all carousel items */
+      transition: transform 0.5s ease;
+      /* Smooth transition for carousel items */
+  }
+  
+  .carousel-item img.birthday {
+      width: auto;
+      /* Allow width to adjust */
+      max-height: 300px;
+      /* Set a max height to keep images clear */
+      object-fit: contain;
+      /* Ensure image fits within the container */
+      margin: auto;
+      /* Center align the image */
+  }
+  
+  .card-footer {
+    font-size: 1em;
+    color: #555;
+  }
+  
+  .card-footer p {
+    margin: 5px 0;
+  }
+  .card-footer1 {
+    font-size: 1em;
+    color: black;
+  }
+  
+  .card-footer p {
+    margin: 5px 0;
+  }
+  .top-right-button {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    background-color: black; /* Button color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    padding: 5px 10px; /* Adjust padding for button size */
+    font-size: 12px; /* Font size for small button */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 3px; /* Rounded corners */
+  }
+  
+  .top-right-button:hover {
+    background-color: #333; /* Darker shade on hover */
+  }
+  .top-right-button1 {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    background-color: white; /* Button color */
+    color: blue; /* Text color */
+    border: none; /* Remove border */
+    padding: 5px 10px; /* Adjust padding for button size */
+    font-size: 12px; /* Font size for small button */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 3px; /* Rounded corners */
+  }
+  
+  .top-right-button1:hover {
+    background-color: wheat; /* Darker shade on hover */
+  }

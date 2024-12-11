@@ -1,0 +1,6 @@
+{
+    "name": "BirthDayReminder",
+    "version": "0.0.1",
+    "homepage":"dist/index.html",
+    "login-redirect":"home.html"
+}

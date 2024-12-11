@@ -1,0 +1,64 @@
+{
+  "name": "zcatalyst-angular-schematics",
+  "version": "1.0.0",
+  "description": "Schematics for developing Angular apps with Catalyst",
+  "scripts": {
+    "copyFiles": "copyfiles -a ./src/**/*.template ./lib/ -u 1",
+    "build": "rm -rf ./lib && npx tsc && npm run copyFiles",
+    "build:watch": "npx tsc -w",
+    "lint:src": "eslint --ext .ts src/ --fix --color",
+    "lint:unit": "eslint --ext .js,.ts test/ --fix --color",
+    "lint": "run-p lint:src lint:unit",
+    "test": "run-s lint:unit test:unit",
+    "test:unit": "jest --config jest.config.js",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "git add -A",
+    "postversion": "git push && git push --tags",
+    "postinstall": "node ./scripts/postInstall.js"
+  },
+  "author": "Catalyst(https://catalyst.zoho.com/)",
+  "homepage": "https://catalyst.zoho.com/",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "@schematics/angular": "^15.2.9"
+  },
+  "schematics": "./collection.json",
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.11.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "copyfiles": "^2.4.1",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.3.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.4.1",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.8.2"
+  },
+  "files": [
+    "lib/**/*",
+    "collectionTemplate.js",
+    "scripts/**/*"
+  ],
+  "keywords": [
+    "zoho",
+    "catalyst",
+    "zcatalyst",
+    "angular",
+    "serverless",
+    "plugin",
+    "client",
+    "cloud",
+    "hosting",
+    "microservice",
+    "cli"
+  ]
+}

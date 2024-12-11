@@ -1,0 +1,30 @@
+{
+  "defaults": {
+    "project": 1,
+    "env": 1
+  },
+  "actives": {
+    "project": 1,
+    "env": 1
+  },
+  "projects": [
+    {
+      "idx": 1,
+      "id": "24071000000187049",
+      "name": "Job-Scheduling-Demo",
+      "domain": {
+        "id": "10091141877",
+        "name": "job-scheduling-demo-856963683.development"
+      },
+      "timezone": "Asia/Kolkata",
+      "env": [
+        {
+          "idx": 1,
+          "id": "856963683",
+          "name": "Development",
+          "type": 3
+        }
+      ]
+    }
+  ]
+}
